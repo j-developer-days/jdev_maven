@@ -1,0 +1,2 @@
+https://maven.apache.org/ref/3.6.3/maven-embedder/cli.html
+https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html
