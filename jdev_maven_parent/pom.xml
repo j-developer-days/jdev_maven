@@ -4,7 +4,7 @@
 
     <groupId>com.jdev</groupId>
     <artifactId>jdev_maven_parent</artifactId>
-    <version>1.4-27.12.2022</version>
+    <version>1.5-27.12.2022</version>
     <packaging>pom</packaging>
 
     <name>jdev_maven_parent</name>
@@ -16,12 +16,14 @@
         1.3.4-26.12.2022 - add hamcrest lib
         1.3.5-26.12.2022 - add assertj-core lib
         1.4-27.12.2022 - add webcam-capture lib
+        1.5-27.12.2022 - add humble-video-all lib
         ----------------------</description>
 
     <properties>
         <assertj-core.version>3.23.1</assertj-core.version>
         <build-helper-maven-plugin.version>3.3.0</build-helper-maven-plugin.version>
         <hamcrest.version>2.2</hamcrest.version>
+        <humble-video-all.version>0.3.0</humble-video-all.version>
         <java.version>11</java.version>
 
         <javafaker.version>1.0.2</javafaker.version>
@@ -82,6 +84,13 @@
                 <groupId>com.github.sarxos</groupId>
                 <artifactId>webcam-capture</artifactId>
                 <version>${webcam-capture.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/io.humble/humble-video-all -->
+            <dependency>
+                <groupId>io.humble</groupId>
+                <artifactId>humble-video-all</artifactId>
+                <version>${humble-video-all.version}</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
