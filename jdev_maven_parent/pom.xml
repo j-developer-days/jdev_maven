@@ -4,10 +4,13 @@
 
     <groupId>com.jdev</groupId>
     <artifactId>jdev_maven_parent</artifactId>
-    <version>1.0-14.11.2022</version>
+    <version>1.1-27.12.2022</version>
     <packaging>pom</packaging>
 
     <name>jdev_maven_parent</name>
+
+    <description>1.1-27.12.2022 - added webcam-capture lib
+        ____________</description>
 
     <properties>
         <java.version>11</java.version>
@@ -37,12 +40,19 @@
 
         <skip.IT.tests>true</skip.IT.tests>
         <skip.UT.tests>true</skip.UT.tests>
-
         <sortpom-maven-plugin.version>2.15.0</sortpom-maven-plugin.version>
+        <webcam-capture.version>0.3.12</webcam-capture.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <!-- https://mvnrepository.com/artifact/com.github.sarxos/webcam-capture -->
+            <dependency>
+                <groupId>com.github.sarxos</groupId>
+                <artifactId>webcam-capture</artifactId>
+                <version>${webcam-capture.version}</version>
+            </dependency>
+
             <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
             <dependency>
                 <groupId>mysql</groupId>
