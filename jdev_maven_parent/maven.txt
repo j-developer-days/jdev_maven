@@ -1,2 +1,10 @@
 https://maven.apache.org/ref/3.6.3/maven-embedder/cli.html
 https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html
+
+maven plugin
+https://maven.apache.org/guides/introduction/introduction-to-plugin-prefix-mapping.html
+https://maven.apache.org/guides/plugin/guide-java-plugin-development.html
+
+maven usefull plugins:
+https://www.mojohaus.org/versions/versions-maven-plugin/index.html
+https://maven.apache.org/plugins/maven-project-info-reports-plugin/index.html

@@ -8,16 +8,17 @@
         <version>1.0-14.11.2022</version>
     </parent>
 
-    <groupId>com.jdev</groupId>
     <artifactId>spring_boot_maven_parents</artifactId>
-    <version>1.0-14.11.2022</version>
+    <version>1.2-07.01.2023</version>
     <packaging>pom</packaging>
 
     <name>spring_boot_maven_parents</name>
+    <description>1.2-07.01.2023 - update spring-boot-dependencies version
+        ______________________________________</description>
 
     <properties>
         <build-helper-maven-plugin.version>3.2.0</build-helper-maven-plugin.version>
-        <spring-boot-dependencies.version>2.7.4</spring-boot-dependencies.version>
+        <spring-boot-dependencies.version>3.0.0</spring-boot-dependencies.version>
     </properties>
 
     <dependencies>

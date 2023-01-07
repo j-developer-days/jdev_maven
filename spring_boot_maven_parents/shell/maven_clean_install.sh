@@ -1,1 +1,2 @@
-clear && mvn clean install --file ../pom.xml -U
+#!/bin/bash
+clear && mvn --file ../pom.xml -U clean install
