@@ -4,10 +4,10 @@
 
     <groupId>com.jdev</groupId>
     <artifactId>jdev_maven_parent</artifactId>
-    <version>2-12.05.2023</version>
+    <version>3-02.06.2023</version>
     <packaging>pom</packaging>
 
-    <name>jdev_maven_parent</name>
+    <name>${project.artifactId}</name>
 
     <description>1.1-27.12.2022 - added webcam-capture lib
         2-12.05.2023 - added rest assured lib
@@ -110,7 +110,7 @@
     </dependencyManagement>
 
     <build>
-        <finalName>jdev_maven_parent</finalName>
+        <finalName>${project.artifactId}</finalName>
 
         <pluginManagement>
             <plugins>
