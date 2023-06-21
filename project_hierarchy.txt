@@ -1,3 +1,6 @@
 jdev_maven_parent
     maven_spring_framework
 	spring_boot_maven_parents
+
+
+jdev_spring-boot-maven-archetype
