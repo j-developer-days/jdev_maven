@@ -6,17 +6,18 @@
     <parent>
         <groupId>com.jdev</groupId>
         <artifactId>jdev_maven_parent</artifactId>
-        <version>3-02.06.2023</version>
+        <version>1-25.12.2024-j17</version>
     </parent>
 
     <artifactId>maven_spring_framework</artifactId>
-    <version>2-02.06.2023</version>
+    <version>1-25.12.2024-j17</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
 
     <properties>
-        <spring-framework-bom.version>5.3.22</spring-framework-bom.version>
+        <!--        https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Versions#:~:text=an%20issue.-,Supported%20Versions,-7.0.x%20will-->
+        <spring-framework-bom.version>6.2.0</spring-framework-bom.version>
     </properties>
 
     <dependencies>

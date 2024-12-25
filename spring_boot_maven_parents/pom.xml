@@ -5,12 +5,12 @@
     <parent>
         <groupId>com.jdev</groupId>
         <artifactId>jdev_maven_parent</artifactId>
-        <version>3-02.06.2023</version>
+        <version>1-25.12.2024-j17</version>
         <relativePath/>
     </parent>
 
     <artifactId>spring_boot_maven_parents</artifactId>
-    <version>2-02.06.2023</version>
+    <version>1-25.12.2024-j17</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -21,8 +21,8 @@
         ______________________________________</description>
 
     <properties>
-        <build-helper-maven-plugin.version>3.2.0</build-helper-maven-plugin.version>
-        <spring-boot-dependencies.version>2.7.8</spring-boot-dependencies.version>
+        <build-helper-maven-plugin.version>3.6.0</build-helper-maven-plugin.version>
+        <spring-boot-dependencies.version>3.4.0</spring-boot-dependencies.version>
         <!--spring after 3.x used java 17-->
     </properties>
 
