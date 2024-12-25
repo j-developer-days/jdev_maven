@@ -5,12 +5,12 @@
 	<parent>
         <groupId>com.jdev</groupId>
         <artifactId>spring_boot_maven_parents</artifactId>
-        <version>2-02.06.2023</version>
+        <version>1-25.12.2024-j17</version>
     </parent>
 
-    <groupId>${groupId}</groupId>
-    <artifactId>${artifactId}</artifactId>
-    <version>${version}</version>
+    <groupId>com.jdev</groupId>
+    <artifactId>test</artifactId>
+    <version>1-25.12.2024</version>
     <packaging>jar</packaging>
  
     <name>${project.artifactId}</name>
@@ -60,6 +60,6 @@
         </plugins>
 
     </build>
-    <url>http://localhost:${portNumber}${contextPath}</url>
+    <url>http://localhost:10025/test</url>
 	
 </project>

@@ -27,25 +27,28 @@ echo '6 - spring-boot build docker image'
 echo '7 - clean install AND spring boot run'
 echo '8 - clean install AND spring boot run with debug mode'
 echo '9 - spring boot build image AND run as a docker'
+
 echo ---------------------------------------------------
-echo 'c - clear screen'
-echo 'e - EXIT'
+echo 'e | E - EXIT'
+echo 'c | C - clear screen'
 
 if [ -z $1 ]; then
-    read commandNumber
+    read COMMAND_NUMBER
   else
-    commandNumber=$1
+    COMMAND_NUMBER=$1
 fi
 
-case "$commandNumber" in
+case "$COMMAND_NUMBER" in
    "1") clean_install
    ;;
-   "2") clear && mvn --file ../pom.xml -U -Dskip.UT.tests=false clean install
+   "2")
+        clear && mvn --file ../pom.xml -U -Dskip.UT.tests=false clean install
         mvn --file ../pom.xml -U -Dskip.IT.tests=false failsafe:integration-test
    ;;
    "3") clear && mvn --file ../pom.xml -U dependency:tree
    ;;
-   "4") clear && mvn --file ../pom.xml -U com.github.ekryd.sortpom:sortpom-maven-plugin:2.15.0:sort
+   "4")
+        clear && mvn --file ../pom.xml -U com.github.ekryd.sortpom:sortpom-maven-plugin:2.15.0:sort
    		  sleep 1
 		    find ../. -name '*pom.xml.bak' -delete
    ;;
@@ -53,23 +56,26 @@ case "$commandNumber" in
    ;;
    "6") spring_boot_build_docker_image
    ;;
-   "7") clean_install
+   "7")
+        clean_install
    		  spring_boot_run
    ;;
-   "8") clean_install
+   "8")
+        clean_install
    		  java -agentlib:jdwp=transport=dt_socket,server=y,address=5009 -jar ../target/${artifactId}.jar
    ;;
-   "9") spring_boot_build_docker_image
+   "9")
+        spring_boot_build_docker_image
         docker run -p ${portNumber}:${portNumber} -t spring-boot-image/${artifactId.toLowerCase()}
    ;;
-   "e") exit 0
+   "e"|"E") exit 1
    ;;
-   "c") clear
+   "c"|"C") clear
    ;;
-    *) sh -e ./main.sh
+    *) sh -e $0
    ;;
 esac
 
 echo "---------------------------------------------------------------------------------------------------"
 
-sh -e ./main.sh
+sh -e $0

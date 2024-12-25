@@ -24,3 +24,5 @@ hs_err_pid*
 
 # idea
 **/.idea/*
+
+jdev_spring-boot-maven-archetype/target/*

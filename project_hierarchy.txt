@@ -11,3 +11,5 @@ java 17 - branch name - j17
 jdev_maven_parent -> 1-25.12.2024-j17
 maven_spring_framework -> 1-25.12.2024-j17
 spring_boot_maven_parents -> 1-25.12.2024-j17
+
+jdev-spring-boot-archetype -> 1-25.12.2024-j17

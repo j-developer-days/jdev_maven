@@ -15,7 +15,7 @@ if [ -z $1 ]; then
     COMMAND_NUMBER=$1
 fi
 
-URL_WITH_CONTEXT_PATH="http://localhost:${portNumber}${contextPath}/"
+URL_WITH_CONTEXT_PATH="http://localhost:10025/test/"
 
 case "$COMMAND_NUMBER" in
    "11") curl --http2-prior-knowledge -i -X POST "${URL_WITH_CONTEXT_PATH}test"

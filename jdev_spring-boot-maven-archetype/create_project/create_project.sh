@@ -10,9 +10,9 @@ rm -rfv ./test
 mvn -X archetype:generate \
   -DarchetypeGroupId=com.jdev \
   -DarchetypeArtifactId=jdev-spring-boot-archetype \
-  -DarchetypeVersion=1-20.06.2023 \
+  -DarchetypeVersion=1-25.12.2024-j17 \
   -DgroupId=com.jdev \
   -DartifactId=test \
-  -Dversion=1-20.06.2023 \
-  -DportNumber=10001 \
+  -Dversion=1-25.12.2024 \
+  -DportNumber=10025 \
   -DcontextPath=/test
