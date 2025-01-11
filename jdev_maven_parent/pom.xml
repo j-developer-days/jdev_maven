@@ -4,7 +4,7 @@
 
     <groupId>com.jdev</groupId>
     <artifactId>jdev_maven_parent</artifactId>
-    <version>1-25.12.2024-j17</version>
+    <version>1.1-10.01.2025-j17</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -14,6 +14,7 @@
         ____________</description>
 
     <properties>
+        <gmavenplus-plugin.version>4.0.1</gmavenplus-plugin.version>
         <java.version>17</java.version>
 
         <javafaker.version>1.0.2</javafaker.version>
