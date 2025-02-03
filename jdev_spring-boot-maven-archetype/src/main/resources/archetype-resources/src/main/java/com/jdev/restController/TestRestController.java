@@ -30,7 +30,7 @@ public class TestRestController {
     }
 
     @GetMapping("/get/{uuid}")
-    public ResponseEntity<LocalDateTime> getTestById(@PathVariable String uuid) {
+    public ResponseEntity<LocalDateTime> getTestById(@PathVariable("uuid") String uuid) {
         log.info("---getTestById---[{}]", uuid);
         final LocalDateTime localDateTime = TEST_MAP.get(uuid);
         return localDateTime == null ? ResponseEntity.notFound().build() : ResponseEntity.ok(localDateTime);
@@ -44,9 +44,9 @@ public class TestRestController {
 
     @GetMapping("/check-exception")
     public ResponseEntity<String> checkException(
-            @RequestParam(required = false, defaultValue = "false") boolean isThrowException)
+            @RequestParam(name = "isThrowException", required = false, defaultValue = "false") boolean isThrowException)
     {
-        log.info("---checkException---");
+        log.info("---checkException--- [{}]", isThrowException);
         if (isThrowException) {
             throw new RuntimeException("exception!");
         }
