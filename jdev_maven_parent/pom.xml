@@ -4,7 +4,7 @@
 
     <groupId>com.jdev</groupId>
     <artifactId>jdev_maven_parent</artifactId>
-    <version>1.1-10.01.2025-j17</version>
+    <version>1.2-23.04.2025-j17</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
@@ -18,7 +18,7 @@
         <java.version>17</java.version>
 
         <javafaker.version>1.0.2</javafaker.version>
-        <junit-jupiter-engine.version>5.8.0</junit-jupiter-engine.version>
+        <junit-jupiter-engine.version>5.11.3</junit-jupiter-engine.version>
         <liquibase-maven-plugin.version>4.4.3</liquibase-maven-plugin.version>
         <lombok.version>1.18.20</lombok.version>
 

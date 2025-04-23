@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
         <groupId>com.jdev</groupId>
         <artifactId>jdev_maven_parent</artifactId>
-        <version>1-25.12.2024-j17</version>
+        <version>1.2-23.04.2025-j17</version>
     </parent>
 
     <artifactId>maven_spring_framework</artifactId>
-    <version>1-25.12.2024-j17</version>
+    <version>2-23.04.2025-j17</version>
     <packaging>pom</packaging>
 
     <name>${project.artifactId}</name>
 
     <properties>
         <!--        https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Versions#:~:text=an%20issue.-,Supported%20Versions,-7.0.x%20will-->
-        <spring-framework-bom.version>6.2.0</spring-framework-bom.version>
+        <spring-framework-bom.version>6.2.5</spring-framework-bom.version>
     </properties>
 
     <dependencies>

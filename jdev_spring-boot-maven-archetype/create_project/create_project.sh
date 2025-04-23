@@ -10,7 +10,7 @@ mvn --file ../pom.xml -U clean install
 mvn -X archetype:generate \
   -DarchetypeGroupId=com.jdev \
   -DarchetypeArtifactId=jdev-spring-boot-archetype \
-  -DarchetypeVersion=2-03.02.2025-j17 \
+  -DarchetypeVersion=2-23.04.2025-j17 \
   -DgroupId=com.jdev \
   -DartifactId=test \
   -Dversion=1-25.12.2024 \
