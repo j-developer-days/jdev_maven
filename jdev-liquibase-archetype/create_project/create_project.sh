@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 
-mvn --file ../pom.xml -U clean install
+./clean_install.sh
 
 ./remove_project.sh
 
