@@ -13,3 +13,5 @@ maven_spring_framework -> 1-25.12.2024-j17 -> 2-23.04.2025-j17
 spring_boot_maven_parents -> 1-25.12.2024-j17 -> 2-23.04.2025-j17
 
 jdev-spring-boot-archetype -> 1-25.12.2024-j17 -> 2-23.04.2025-j17
+
+jdev-liquibase-archetype -> 1.1-23.07.2025-j17

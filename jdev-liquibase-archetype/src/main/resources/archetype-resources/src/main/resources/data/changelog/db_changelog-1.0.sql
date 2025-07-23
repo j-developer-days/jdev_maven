@@ -1,0 +1,22 @@
+--liquibase formatted sql
+
+--changeset username:1
+--comment: create new table t_contact_us
+--rollback DROP TABLE IF EXISTS t_contact_us CASCADE;
+--CREATE TABLE IF NOT EXISTS t_contact_us(
+--	id serial NOT NULL,
+--	person_name VARCHAR(100) NOT NULL,
+--	person_email VARCHAR(100) NOT NULL,
+--	message VARCHAR(5000) NOT NULL,
+--	file_paths VARCHAR[] NULL,
+--	create_datetime TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+--	timezone_ids VARCHAR[2] NOT NULL,
+--	is_read BOOLEAN NOT NULL DEFAULT FALSE,
+--
+--	CONSTRAINT t_contact_us__id__pk PRIMARY KEY(id)
+--); --${tablespace.specify};
+
+--changeset username:2
+--comment: add new column to table t_contact_us
+--ALTER TABLE IF EXISTS t_contact_us
+--ADD COLUMN  IF NOT EXISTS read_datetime TIMESTAMP WITHOUT TIME ZONE NULL DEFAULT NULL;

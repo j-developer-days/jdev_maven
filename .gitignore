@@ -27,3 +27,5 @@ hs_err_pid*
 
 jdev_spring-boot-maven-archetype/target/*
 jdev_spring-boot-maven-archetype/create_project/test/*
+
+**/target/**

@@ -1,0 +1,90 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+ 
+	<parent>
+        <groupId>com.jdev</groupId>
+        <artifactId>spring_boot_maven_parents</artifactId>
+        <version>2-23.04.2025-j17</version>
+    </parent>
+
+    <groupId>${groupId}</groupId>
+    <artifactId>${artifactId}</artifactId>
+    <version>${version}</version>
+    <packaging>jar</packaging>
+ 
+    <name>${project.artifactId}</name>
+
+    <properties>
+        <junit-jupiter-engine.version>5.11.3</junit-jupiter-engine.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.liquibase/liquibase-core -->
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+        </dependency>
+
+
+    </dependencies>
+	
+	<build>
+        <finalName>${project.artifactId}</finalName>
+
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>${project.basedir}/src/main/resources</directory>
+                <excludes>
+                    <exclude>*.txt</exclude>
+                </excludes>
+            </resource>
+        </resources>
+
+
+        <plugins>
+            <plugin>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-maven-plugin</artifactId>
+                <configuration>
+                    <propertyFile>${project.build.directory}/classes/liquibase.properties</propertyFile>
+                </configuration>
+            </plugin>
+        </plugins>
+
+    </build>
+
+    <profiles>
+
+        <profile>
+            <id>db-production</id>
+            <properties>
+                <db.name>postgres</db.name>
+                <db.password>root_production_12345</db.password>
+                <db.url>jdbc:postgresql://localhost:1234/${db.name}</db.url>
+                <db.username>postgres</db.username>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>db-development</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <db.name>postgres</db.name>
+                <db.password>root_development_54321</db.password>
+                <db.url>jdbc:postgresql://localhost:4321/${db.name}</db.url>
+                <db.username>passgen_db_admin</db.username>
+            </properties>
+        </profile>
+
+    </profiles>
+
+</project>
