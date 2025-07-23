@@ -4,8 +4,8 @@
  
 	<parent>
         <groupId>com.jdev</groupId>
-        <artifactId>spring_boot_maven_parents</artifactId>
-        <version>2-23.04.2025-j17</version>
+        <artifactId>jdev_maven_parent</artifactId>
+        <version>1.2-23.04.2025-j17</version>
     </parent>
 
     <groupId>${groupId}</groupId>
