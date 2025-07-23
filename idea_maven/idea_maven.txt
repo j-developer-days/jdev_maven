@@ -1,0 +1,2 @@
+/home/akbars95/projects/programms/apache-maven-3.8.3
+/home/akbars95/projects/programms/apache-maven-3.8.3/conf/settings.xml
