@@ -16,7 +16,6 @@
     <name>${project.artifactId}</name>
 
     <properties>
-        <junit-jupiter-engine.version>5.11.3</junit-jupiter-engine.version>
     </properties>
 
     <dependencies>
