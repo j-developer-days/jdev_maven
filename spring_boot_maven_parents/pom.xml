@@ -6,7 +6,7 @@
         <groupId>com.jdev</groupId>
         <artifactId>jdev_maven_parent</artifactId>
         <version>3-02.06.2023</version>
-        <relativePath/>
+        <relativePath></relativePath>
     </parent>
 
     <artifactId>spring_boot_maven_parents</artifactId>
