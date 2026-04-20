@@ -1,4 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/"
+
 echo 'I - Test endpoints:'
 echo '\t11 - create'
 echo '\t12 - get by id'
@@ -10,14 +13,14 @@ echo 'e | E - EXIT'
 echo 'c | C - clear screen'
 
 if [ -z $1 ]; then
-    read -p "Enter your command number: " COMMAND_NUMBER
+    read -rp "Enter your command number: " COMMAND_NUMBER
   else
     COMMAND_NUMBER=$1
 fi
 
 URL_WITH_CONTEXT_PATH="http://localhost:${portNumber}${contextPath}/"
 
-case "$COMMAND_NUMBER" in
+case "${COMMAND_NUMBER}" in
    "11") curl --http2-prior-knowledge -i -X POST "${URL_WITH_CONTEXT_PATH}test"
    ;;
    "12")
@@ -39,11 +42,11 @@ case "$COMMAND_NUMBER" in
    ;;
    "c"|"C") clear
    ;;
-    *) sh -e $0
+    *) bash -e "${BASH_SOURCE[0]}"
    ;;
 esac
 
 echo
 echo "---------------------------------------------------------------------------------------------------"
 
-sh -e $0
+bash -e "${BASH_SOURCE[0]}"

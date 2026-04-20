@@ -1,3 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-rm -rfv ./test
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/"
+
+rm -rfv "${SCRIPT_DIR}"test

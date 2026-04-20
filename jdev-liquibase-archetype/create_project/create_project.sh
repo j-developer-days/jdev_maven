@@ -1,19 +1,22 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/"
+
 clear
 
-./clean_install.sh
+bash "${SCRIPT_DIR}"clean_install.sh
 
-./remove_project.sh
+bash "${SCRIPT_DIR}"remove_project.sh
 
 #mvn archetype:generate
 
 mvn -X archetype:generate \
   -DarchetypeGroupId=com.jdev \
   -DarchetypeArtifactId=jdev-liquibase-archetype \
-  -DarchetypeVersion=1-14.07.2025-j17 \
+  -DarchetypeVersion=1.1.3-20.04.2026-j17 \
   -DgroupId=com.jdev \
   -DartifactId=test \
-  -Dversion=1-23.07.2025 \
+  -Dversion=2-20.04.2026 \
 
 echo '-----------------------------------------------------'
 ls -la

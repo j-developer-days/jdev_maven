@@ -1,20 +1,22 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/"
 
 #---------------------------------------------------
 clean_install()
 {
-	clear && mvn --file ../pom.xml -U clean install
+	clear && mvn --file "${SCRIPT_DIR}"../pom.xml -U clean install
 }
 
 spring_boot_run()
 {
-	mvn --file ../pom.xml -U spring-boot:run
+	mvn --file "${SCRIPT_DIR}"../pom.xml -U spring-boot:run
 }
 
 spring_boot_build_docker_image()
 {
 	clear
-	mvn --file ../pom.xml -U spring-boot:build-image -Dspring-boot.build-image.imageName=spring-boot-image/${artifactId.toLowerCase()}
+	mvn --file "${SCRIPT_DIR}"../pom.xml -U spring-boot:build-image -Dspring-boot.build-image.imageName=spring-boot-image/${artifactId.toLowerCase()}
 }
 #---------------------------------------------------
 
@@ -33,24 +35,24 @@ echo 'e | E - EXIT'
 echo 'c | C - clear screen'
 
 if [ -z $1 ]; then
-    read COMMAND_NUMBER
+    read -rp "Enter your command number: " COMMAND_NUMBER
   else
     COMMAND_NUMBER=$1
 fi
 
-case "$COMMAND_NUMBER" in
+case "${COMMAND_NUMBER}" in
    "1") clean_install
    ;;
    "2")
-        clear && mvn --file ../pom.xml -U -Dskip.UT.tests=false clean install
-        mvn --file ../pom.xml -U -Dskip.IT.tests=false failsafe:integration-test
+        clear && mvn --file "${SCRIPT_DIR}"../pom.xml -U -Dskip.UT.tests=false clean install
+        mvn --file "${SCRIPT_DIR}"../pom.xml -U -Dskip.IT.tests=false failsafe:integration-test
    ;;
-   "3") clear && mvn --file ../pom.xml -U dependency:tree
+   "3") clear && mvn --file "${SCRIPT_DIR}"../pom.xml -U dependency:tree
    ;;
    "4")
-        clear && mvn --file ../pom.xml -U com.github.ekryd.sortpom:sortpom-maven-plugin:2.15.0:sort
+        clear && mvn --file "${SCRIPT_DIR}"../pom.xml -U com.github.ekryd.sortpom:sortpom-maven-plugin:2.15.0:sort
    		  sleep 1
-		    find ../. -name '*pom.xml.bak' -delete
+		    find "${SCRIPT_DIR}"../. -name '*pom.xml.bak' -delete
    ;;
    "5") spring_boot_run
    ;;
@@ -62,7 +64,7 @@ case "$COMMAND_NUMBER" in
    ;;
    "8")
         clean_install
-   		  java -agentlib:jdwp=transport=dt_socket,server=y,address=5009 -jar ../target/${artifactId}.jar
+   		  java -agentlib:jdwp=transport=dt_socket,server=y,address=5009 -jar "${SCRIPT_DIR}"../target/${artifactId}.jar
    ;;
    "9")
         spring_boot_build_docker_image
@@ -72,10 +74,10 @@ case "$COMMAND_NUMBER" in
    ;;
    "c"|"C") clear
    ;;
-    *) sh -e $0
+    *) bash -e "${BASH_SOURCE[0]}"
    ;;
 esac
 
 echo "---------------------------------------------------------------------------------------------------"
 
-sh -e $0
+bash -e "${BASH_SOURCE[0]}"

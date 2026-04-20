@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/"
 
 ###########################
 #params:
@@ -23,7 +25,7 @@ choose_maven_profile_and_return_name() {
       PROFILE_NUMBER=$1
     fi
 
-  case "$PROFILE_NUMBER" in
+  case "${PROFILE_NUMBER}" in
      "1") PROFILE_NAME='db-development'
      ;;
      "2") PROFILE_NAME='db-production'
@@ -51,7 +53,7 @@ choose_liquibase_goal_and_return_name() {
       PROFILE_NUMBER=$1
     fi
 
-  case "$PROFILE_NUMBER" in
+  case "${$PROFILE_NUMBER}" in
      "1") PROFILE_NAME='update'
      ;;
      "2") PROFILE_NAME='dropAll'
@@ -75,12 +77,12 @@ echo 'e | E - EXIT'
 echo 'c | C - clear screen'
 
 if [ -z $1 ]; then
-    read -p "Enter your command number: " COMMAND_NUMBER
+    read -rp "Enter your command number: " COMMAND_NUMBER
   else
     COMMAND_NUMBER=$1
 fi
 
-case "$COMMAND_NUMBER" in
+case "${COMMAND_NUMBER}" in
    "1")
       clear
       show_profile_names
@@ -88,21 +90,20 @@ case "$COMMAND_NUMBER" in
       show_liquibase_goal_names
       LIQUIBASE_NAME=`choose_liquibase_goal_and_return_name $4`
 #      mvn cli -X = debug
-      mvn --file ../pom.xml -U -P${PROFILE_NAME} clean package
-      mvn --file ../pom.xml liquibase:${LIQUIBASE_NAME}
+      mvn --file "${SCRIPT_DIR}"../pom.xml -U -P${PROFILE_NAME} clean package
+      mvn --file "${SCRIPT_DIR}"../pom.xml liquibase:${LIQUIBASE_NAME}
    ;;
    "e"|"E") exit 1
    ;;
    "c"|"C") clear
    ;;
-    *) sh -e $0
-   ;;
+    *) bash -e "${BASH_SOURCE[0]}"
 esac
 
 echo '----------------------------------------------------------'
 
 if [ -z $2 ]; then
-    sh -e $0
+    bash -e "${BASH_SOURCE[0]}"
   else
     exit
 fi

@@ -28,3 +28,22 @@ jdev-spring-boot-archetype ->
 jdev-liquibase-archetype -> 
                 1.1-23.07.2025-j17
                 1.1.1-23.07.2025-j17
+                
+                
+                
+                2200030348433997
+
+
+
+Проверяем оплату
+Номер заказа 7181239
+Загрузите pdf чек в форму ниже для завершения оплаты:
+
+
+https://pay.exgobit.net/cb5922ce-cc83-48f2-b108-6ad698ddf295
+
+
+
+sudo nano /etc/default/grub
+GRUB_DEFAULT=4
+sudo update-grub

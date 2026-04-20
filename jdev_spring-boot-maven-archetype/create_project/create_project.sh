@@ -1,19 +1,22 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/"
+
 clear
 
-mvn --file ../pom.xml -U clean install
+mvn --file "${SCRIPT_DIR}"../pom.xml -U clean install
 
-./remove_project.sh
+bash "${SCRIPT_DIR}"remove_project.sh
 
 #mvn archetype:generate
 
 mvn -X archetype:generate \
   -DarchetypeGroupId=com.jdev \
   -DarchetypeArtifactId=jdev-spring-boot-archetype \
-  -DarchetypeVersion=2-23.04.2025-j17 \
+  -DarchetypeVersion=2.1-20.04.2026-j17 \
   -DgroupId=com.jdev \
   -DartifactId=test \
-  -Dversion=1-25.12.2024 \
+  -Dversion=2-20.04.2026 \
   -DportNumber=10025 \
   -DcontextPath=/test
 
