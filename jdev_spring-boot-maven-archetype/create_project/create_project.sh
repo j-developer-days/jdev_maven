@@ -13,7 +13,7 @@ bash "${SCRIPT_DIR}"remove_project.sh
 mvn -X archetype:generate \
   -DarchetypeGroupId=com.jdev \
   -DarchetypeArtifactId=jdev-spring-boot-archetype \
-  -DarchetypeVersion=2.1-20.04.2026-j17 \
+  -DarchetypeVersion=2.3-22.07.2026-j17 \
   -DgroupId=com.jdev \
   -DartifactId=test \
   -Dversion=2-20.04.2026 \

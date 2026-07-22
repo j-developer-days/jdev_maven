@@ -10,6 +10,7 @@ public class ContextIT {
 
     @Test
     void context(ApplicationContext ctx) {
+        System.out.println("run IT");
         Assertions.assertEquals(175, ctx.getBeanDefinitionCount());
     }
 
