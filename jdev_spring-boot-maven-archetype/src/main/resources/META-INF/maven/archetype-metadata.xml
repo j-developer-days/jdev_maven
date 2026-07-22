@@ -31,7 +31,7 @@
         <fileSet filtered="true" packaged="false">
             <directory>src/main/resources</directory>
         </fileSet>
-        <fileSet filtered="false" packaged="true">
+        <fileSet filtered="false" packaged="false">
             <directory>src/test/java</directory>
         </fileSet>
         <fileSet>
